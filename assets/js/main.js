@@ -245,6 +245,15 @@
   });
 
   /**
+   * preloader
+   */
+  var loader = document.getElementById("preloader");
+  window.addEventListener("load", function() {
+    loader.style.display = "none";
+  });
+  
+
+  /**
    * Initiate Pure Counter 
    */
   new PureCounter();
