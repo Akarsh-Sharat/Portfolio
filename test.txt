@@ -1,0 +1,5 @@
+working on 
+
+
+git config --global user.email "akarshsharat123@gmail.com"
+  git config --global user.name "Akarsh-Sharat"
