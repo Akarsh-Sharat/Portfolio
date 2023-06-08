@@ -19,7 +19,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg-dark1.jpg") top right no-repeat;
+  background: #040404 url("../img/bg.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -27,6 +27,8 @@ body::before {
   height: 100vh;
   z-index: -1;
 }
+
+
 
 @media (min-width: 1024px) {
   body::before {
@@ -89,12 +91,14 @@ h6 {
 #header h2 {
   font-size: 24px;
   margin-top: 20px;
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  color: white;
 }
 
 #header h2 span {
-  color: #fff;
+  color: black;
   border-bottom: 2px solid #18d26e;
+  font-weight: 600;
   padding-bottom: 6px;
 }
 
