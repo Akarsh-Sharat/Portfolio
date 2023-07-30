@@ -1,13 +1,58 @@
-/**
-* Template Name: Personal - v4.10.0
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
+
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+/* light Mode styles for section .container, .navbar-mobile, #header.header-top */
+body.light-mode body,
+body.light-mode section .container,
+body.light-mode .navbar-mobile,
+body.light-mode #header.header-top
+ {
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+}
+
+body.light-mode #contact .info-box,
+body.light-mode #portfolio li
+{
+  background: rgba(234, 233, 233, 0.5);
+  color: #000000;
+}
+
+body.light-mode #contact h3,
+body.light-mode #resume h2,
+body.light-mode #contact h2
+{
+  color: #696666;
+}
+
+
+body.light-mode p,
+body.light-mode #header h1 a,
+body.light-mode #header h1 a:hover,
+body.light-mode #contact p,
+body.light-mode #header h2,
+body.light-mode #header a,
+body.light-mode #resume h3,
+body.light-mode #contact a,
+body.light-mode .skill i,
+body.light-mode .mobile-nav-toggle,
+body.light-mode .progress span.skill
+{
+  color: #000000;
+}
+
+body.light-mode #header h2 span
+{
+  color: #ffffff;
+}
+
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
@@ -19,7 +64,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") center no-repeat;
+  background: url("../img/bg.jpg") center no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -67,7 +112,10 @@ h6 {
   z-index: 997;
   overflow-y: auto;
 }
-
+#header .toggel-mode-button
+ {
+  display: none;
+}
 #header * {
   transition: ease-in-out 0.3s;
 }
@@ -164,6 +212,11 @@ h6 {
 #header.header-top .social-links,
 #header.header-top h2 {
   display: none;
+}
+
+#header.header-top .toggel-mode-button {
+  display: block; 
+  /*display: inline-block; */
 }
 
 #header.header-top h1 {
@@ -890,7 +943,7 @@ section .container {
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   text-transform: uppercase;
   padding: 0;
@@ -1229,4 +1282,111 @@ section .container {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+
+
+/* -------------------------------------------------------------
+Toggel switch design
+------------------------------------------------------------- */
+#theme-toggle {
+  display: none;
+}
+
+label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 58px; /* Updated width */
+  height: 28px; /* Updated height */
+  margin: 0 auto;
+  background-color: #3782f3d1;
+  border-radius: 28px; /* Updated border-radius */
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
+
+
+#star {
+  position: absolute;
+  top: 6px; /* Updated top position */
+  left: 6px; /* Updated left position */
+  width: 15px; /* Updated width */
+  height: 15px; /* Updated height */
+  background-color: #fdd50f;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+  z-index: 1;
+}
+
+#star-1 {
+  position: relative;
+}
+
+#star-2 {
+  position: absolute;
+  transform: rotateZ(36deg);
+}
+
+.star {
+  top: 0;
+  left: -3px; /* Updated left position */
+  font-size: 28px; /* Updated font-size */
+  line-height: 14px; /* Updated line-height */
+  color: #f6ff00a0;
+  transition: 0.3s ease color;
+}
+
+#moon {
+  position: absolute;
+  bottom: -26px; /* Updated bottom position */
+  right: 4px; /* Updated right position */
+  width: 20px; /* Updated width */
+  height: 20px; /* Updated height */
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease bottom;
+}
+
+#moon:before {
+  content: "";
+  position: absolute;
+  top: -6px; /* Updated top position */
+  left: -9px; /* Updated left position */
+  width: 20px; /* Updated width */
+  height: 20px; /* Updated height */
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label {
+  background-color: #575555eb;
+}
+
+#toggle_checkbox:checked + label #star {
+  top: 2px; /* Updated top position */
+  left: 32px; /* Updated left position */
+  transform: scale(0.15); /* Updated scale */
+  background-color: rgb(255, 255, 255);
+}
+
+#toggle_checkbox:checked + label .star {
+  color: rgb(255, 255, 255);
+}
+
+#toggle_checkbox:checked + label #moon {
+  bottom: 4px; /* Updated bottom position */
+}
+
+#toggle_checkbox:checked + label #moon:before {
+  background-color: #575555eb;
+}
+#toggle_checkbox {
+  display: none;
 }
